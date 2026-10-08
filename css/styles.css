@@ -497,6 +497,11 @@ p {
   transform: rotate(12deg);
   opacity: 0.92;
 }
+.stamp.secondary {
+  margin-left: -16px;
+  transform: rotate(12deg);
+  opacity: 0.92;
+}
 
 .bmi-grid {
   min-height: 475px;
