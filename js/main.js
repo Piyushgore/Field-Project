@@ -14,6 +14,7 @@
 // ======================================
 // 1. Website content you can edit
 // ======================================
+// These constants are the easiest places to update text, plans, and media.
 const assets = {
   hero: "assets/hero.jpg",
   strength: "assets/strength.jpg",
@@ -34,6 +35,7 @@ const navItems = [
   "membership",
 ];
 
+// Program cards shown on the fitness section.
 const programs = [
   {
     number: "01",
@@ -61,6 +63,7 @@ const programs = [
   },
 ];
 
+// Membership plans shown on the pricing section.
 const memberships = [
   {
     name: "Zumba Workout",
@@ -95,6 +98,7 @@ const memberships = [
   },
 ];
 
+// Weekly schedule cards; each entry is [day, date, sessions].
 const schedule = [
   ["MON", "14", ["06:15 / Strength Lab", "12:30 / Zumba Workout", "18:00 / Conditioning"]],
   ["TUE", "15", ["07:00 / Reset Room", "17:30 / Zumba + Gym", "19:00 / Strength Lab"]],
@@ -105,6 +109,7 @@ const schedule = [
   ["SUN", "20", ["09:00 / Reset Room", "11:00 / Zumba Workout", "16:00 / All In"]],
 ];
 
+// Workout detail content for the hash-based detail route.
 const workoutData = {
   "strength-lab": {
     title: "Strength Lab",
@@ -129,6 +134,7 @@ const workoutData = {
 // ======================================
 // 2. Small reusable HTML helpers
 // ======================================
+// These helpers reduce duplication in the page templates.
 const app = document.querySelector("#app");
 const select = (query) => document.querySelector(query);
 const selectAll = (query) => [...document.querySelectorAll(query)];
@@ -146,6 +152,7 @@ function sectionLink(text, section, className = "text-link") {
 // ======================================
 // 3. Header and home page markup
 // ======================================
+// This section builds the main landing page and all homepage blocks.
 function headerHtml() {
   return `<header class="site-header" id="top">
     <a class="brand" href="#home" aria-label="EmpowerLife4U home">
@@ -222,6 +229,7 @@ function homePage() {
     </footer>`;
 }
 
+// BMI calculator panel.
 function bmiHtml() {
   return `<section class="section container bmi-grid reveal" id="bmi">
     <div class="bmi-copy">
@@ -256,6 +264,7 @@ function bmiHtml() {
   </section>`;
 }
 
+// Fitness program cards generated from the program data array.
 function fitnessHtml() {
   const cards = programs.map((program) => `
     <article class="card">
@@ -288,6 +297,7 @@ function fitnessHtml() {
   </section>`;
 }
 
+// Nutrition guidance section with simple, editable content blocks.
 function nutritionHtml() {
   const cards = [
     ["01", "Build your plate", "Anchor every meal with protein, colorful plants, and a carbohydrate that matches your output."],
@@ -315,6 +325,7 @@ function nutritionHtml() {
   </section>`;
 }
 
+// Weekly timetable shown in the schedule area.
 function scheduleHtml() {
   return `<section class="section container reveal" id="schedule">
     <div class="schedule-header">
@@ -346,6 +357,7 @@ function scheduleHtml() {
   </section>`;
 }
 
+// Testimonials and social proof section.
 function reviewsHtml() {
   return `<section class="section reviews reveal" id="reviews">
     <div class="container">
@@ -386,6 +398,7 @@ function reviewsHtml() {
   </section>`;
 }
 
+// Membership/plans section with WhatsApp CTA buttons.
 function membershipHtml() {
   const plans = memberships.map((plan) => `
     <article class="membership-card ${plan.featured ? "featured" : ""}">
@@ -418,6 +431,7 @@ function membershipHtml() {
   </section>`;
 }
 
+// Contact form section. Enquiries are opened in WhatsApp instead of a backend.
 function contactHtml() {
   return `<section class="section contact reveal" id="contact">
     <div class="container contact-grid">
@@ -456,6 +470,7 @@ function contactHtml() {
 // ======================================
 // 4. Workout and owner pages
 // ======================================
+// Individual workout detail page generated from slug-based route data.
 function workoutPage(slug) {
   const workout = workoutData[slug] || workoutData["strength-lab"];
   const steps = [
@@ -527,6 +542,7 @@ function workoutPage(slug) {
 // ======================================
 // 5. Interactive website behavior
 // ======================================
+// These functions handle navigation, BMI updates, animations, and form actions.
 function goToSection(section) {
   const target = document.getElementById(section);
   if (!target) return;
@@ -652,6 +668,7 @@ function submitInquiry(event) {
 //    #home, #about, ...      -> home page, scrolled to that section
 //    #/workout/strength-lab  -> workout detail page
 // ======================================
+// Routing keeps the site working as a lightweight single-page app without a framework.
 let currentView = null; // "home" or "workout:<slug>"
 
 function isWorkoutRoute() {
