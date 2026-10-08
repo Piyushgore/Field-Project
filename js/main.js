@@ -207,7 +207,8 @@ function homePage() {
           <div class="about-footer">
             <p>Structured movement. Real accountability. A stronger version of you.</p>
             <div class="stamp">Coach<br>led</div>
-            <div class="stamp">Results<br>driven</div>
+            <div class="stamp secondary">Results<br>driven</div>
+            
           </div>
         </div>
       </section>
