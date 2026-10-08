@@ -478,7 +478,7 @@ p {
 .stamp {
   align-self: end;
   display: grid;
-  place-items: center;
+  place-items: left;
   width: 95px;
   height: 95px;
   border: 1px solid var(--orange);
