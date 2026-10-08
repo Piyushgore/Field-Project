@@ -475,6 +475,22 @@ p {
   text-transform: uppercase;
   transform: rotate(-12deg);
 }
+.stamp-secondary{
+  align-self: end;
+  display: grid;
+  place-items: center;
+  width: 95px;
+  height: 95px;
+  border: 1px solid var(--orange);
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(-12deg);
+}
 
 .stamp.secondary {
   margin-left: -16px;
