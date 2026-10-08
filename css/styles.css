@@ -498,7 +498,7 @@ p {
   opacity: 0.92;
 }
 .stamp.secondary {
-  margin-left: -16px;
+  margin-right: -16px;
   transform: rotate(12deg);
   opacity: 0.92;
 }
